@@ -1,0 +1,94 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-palette: (
+  50: #f3fcf3,
+  100: #f1fcda,
+  200: #e0f9b7,
+  300: #c5ec8f,
+  400: #a8db6f,
+  500: #80c343,
+  600: #63a730,
+  700: #498c21,
+  800: #327115,
+  900: #225d0c,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  ),
+);
+
+$accent-palette: (
+  100: #fee4d6,
+  200: #fdc2ad,
+  300: #f99884,
+  400: #f37064,
+  500: #ec3333,
+  600: #ca2533,
+  700: #a91932,
+  800: #88102f,
+  900: #71092d,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+  ),
+);
+
+$warn-palette: (
+  100: #fff9cc,
+  200: #fff099,
+  300: #ffe666,
+  400: #ffdc3f,
+  500: #ffcc00,
+  600: #dbaa00,
+  700: #b78b00,
+  800: #936d00,
+  900: #7a5700,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+  ),
+);
+
+$acer-primary: mat.m2-define-palette($primary-palette, 500);
+$acer-accent: mat.m2-define-palette($accent-palette, 500);
+$acer-warn: mat.m2-define-palette($warn-palette);
+
+$acer-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $acer-primary,
+      accent: $acer-primary,
+      warn: $acer-warn,
+    ),
+    typography: mat.m2-define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($acer-theme);
